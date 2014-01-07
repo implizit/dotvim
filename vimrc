@@ -237,6 +237,23 @@ autocmd FileType rest call s:ReStructuredTextMode()
 " }}}
 
 " ------------------------------------------------------------------------ {{{
+" Mail
+
+function s:MailMode()
+  setlocal fo += aw
+  "setlocal textwidth=78
+  "setlocal wrap
+  setlocal expandtab
+  setlocal nocindent
+  setlocal noautoindent
+  setlocal spell
+  setlocal spelllang=de,en
+endfunction
+
+autocmd FileType mail call s:MailMode()
+" }}}
+
+" ------------------------------------------------------------------------ {{{
 "  Other modes
 "
 Bundle 'aklt/plantuml-syntax'
