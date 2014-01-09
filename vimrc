@@ -241,7 +241,7 @@ autocmd FileType rest call s:ReStructuredTextMode()
 
 function s:MailMode()
   setlocal fo += aw
-  "setlocal textwidth=78
+  setlocal textwidth=78
   "setlocal wrap
   setlocal expandtab
   setlocal nocindent
