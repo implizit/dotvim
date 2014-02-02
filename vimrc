@@ -113,7 +113,10 @@ set shiftround         " Round indent to a multiple of 'shiftwidth'.
 " Tab completion
 set wildmenu      " Show autocomplete menus
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.hg,*.pyc
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.hg,*.py[co],*.swp
+
+" Ignore these when using TAB key with :e
+set suffixes=~,.aux,.bak,.bkp,.dvi,.hi,.o,.gz,.idx,.log,.ps,.swp,.tar,.ilg,.bbl,.toc,.ind
 " }}}
 
 " ------------------------------------------------------------------------ {{{
