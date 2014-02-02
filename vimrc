@@ -205,9 +205,11 @@ function s:TextMode()
   set wrap
   set textwidth=79
   set formatoptions=tcq
+  setlocal formatprg=par\ -w79
 endfunction
 
 au BufRead,BufNewFile *.txt call s:TextMode()
+autocmd FileType markdown call s:TextMode()
 " }}}
 
 " ------------------------------------------------------------------------ {{{
@@ -241,13 +243,14 @@ autocmd FileType rest call s:ReStructuredTextMode()
 
 function s:MailMode()
   setlocal fo += aw
-  setlocal textwidth=78
+  setlocal textwidth=79
   "setlocal wrap
   setlocal expandtab
   setlocal nocindent
   setlocal noautoindent
   setlocal spell
   setlocal spelllang=de,en
+  setlocal formatprg=par\ -w79q
 endfunction
 
 autocmd FileType mail call s:MailMode()
