@@ -327,8 +327,8 @@ nnoremap <C-l> <C-w>l
 " ------------------------------------------------------------------------ {{{
 " Misc key mappings
 " Toggle line numbers and fold column for easy copying:
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-nnoremap <F3> :set norelativenumber!<CR>:set foldcolumn=0<CR>
+nnoremap <leader>zn :set nonumber!<CR>:set foldcolumn=0<CR>
+nnoremap <leader>zN :set norelativenumber!<CR>:set foldcolumn=0<CR>
 
 " Toggle centering current line
 nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
