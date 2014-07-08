@@ -76,7 +76,7 @@ set scrolloff=3        " Context lines at top and bottom of display.
 set sidescrolloff=5    " Context columns at left and right.
 set sidescroll=1       " Number of chars to scroll when scrolling sideways.
 
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:·
 
 set splitright         " Split new vertical windows right of current window.
 set splitbelow         " Split new horizontal windows under current window.
