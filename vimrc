@@ -337,6 +337,7 @@ nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
 " ------------------------------------------------------------------------ {{{
 " UltiSnips settings
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "MyUltiSnips"]
 " }}}
 
