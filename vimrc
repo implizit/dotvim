@@ -157,7 +157,6 @@ set encoding=utf-8  " Use UTF-8
 
 " ------------------------------------------------------------------------ {{{
 " Python
-Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
 
 function s:PythonMode()
@@ -169,9 +168,6 @@ function s:PythonMode()
   set autoindent
 endfunction
 autocmd FileType python call s:PythonMode()
-
-" Disable python folding
-let g:pymode_folding=0
 
 " Twisted application files are Pthon files too
 autocmd BufRead,BufNewFile *.tac set filetype=python
@@ -185,7 +181,10 @@ if 'VIRTUAL_ENV' in os.environ:
     project_base_dir = os.environ['VIRTUAL_ENV']
     sys.path.insert(0, project_base_dir)
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
+    try:
+        execfile(activate_this, dict(__file__=activate_this))
+    except:
+        pass
 EOF
 " }}}
 
