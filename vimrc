@@ -157,6 +157,8 @@ set encoding=utf-8  " Use UTF-8
 
 " ------------------------------------------------------------------------ {{{
 " Python
+
+" Python autocompletion
 Bundle 'davidhalter/jedi-vim'
 
 function s:PythonMode()
@@ -263,7 +265,6 @@ autocmd FileType mail call s:MailMode()
 "
 Bundle 'aklt/plantuml-syntax'
 Bundle 'tpope/vim-markdown'
-Bundle 'jceb/vim-orgmode'
 Bundle 'asciidoc.vim'
 
 "  make uses real tabs
@@ -277,14 +278,27 @@ let mapleader=","
 " }}}
 
 " ------------------------------------------------------------------------ {{{
+" Syntax checking
+"
+Bundle 'scrooloose/syntastic'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" }}}
+
+" ------------------------------------------------------------------------ {{{
 " Misc. plugins
 
 Bundle 'ciaranm/securemodelines'
 
-Bundle 'implizit/vim-signify'
+Bundle 'mhinz/vim-signify'
 let g:signify_vcs_list = [ 'fossil', 'git', 'hg' ]
-
-Bundle 'mattn/calendar-vim'
 
 Bundle 'kien/ctrlp.vim'
 " ignore files: see [wildmode] above
@@ -296,11 +310,7 @@ map <leader>tl <Plug>TaskList
 Bundle 'sjl/gundo.vim'
 map <leader>g :GundoToggle<CR>
 
-Bundle 'utl.vim'
 Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-speeddating'
-
-Bundle 'VOoM'
 " }}}
 
 " ------------------------------------------------------------------------ {{{
