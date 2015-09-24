@@ -34,7 +34,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Vundle must manage itself
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 " }}}
 
 " ------------------------------------------------------------------------ {{{
@@ -159,7 +159,7 @@ set encoding=utf-8  " Use UTF-8
 " Python
 
 " Python autocompletion
-Bundle 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 
 function s:PythonMode()
   set shiftwidth=4
@@ -218,7 +218,7 @@ autocmd FileType markdown call s:TextMode()
 
 " ------------------------------------------------------------------------ {{{
 " ReStructuredText mode
-Bundle 'rest.vim'
+Plugin 'rest.vim'
 
 autocmd BufRead,BufNewFile *.rst set syntax=rest
 
@@ -263,9 +263,9 @@ autocmd FileType mail call s:MailMode()
 " ------------------------------------------------------------------------ {{{
 "  Other modes
 "
-Bundle 'aklt/plantuml-syntax'
-Bundle 'tpope/vim-markdown'
-Bundle 'asciidoc.vim'
+Plugin 'aklt/plantuml-syntax'
+Plugin 'tpope/vim-markdown'
+Plugin 'asciidoc.vim'
 
 "  make uses real tabs
 au FileType make set noexpandtab
@@ -280,7 +280,7 @@ let mapleader=","
 " ------------------------------------------------------------------------ {{{
 " Syntax checking
 "
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -295,22 +295,23 @@ let g:syntastic_check_on_wq = 0
 " ------------------------------------------------------------------------ {{{
 " Misc. plugins
 
-Bundle 'ciaranm/securemodelines'
+Plugin 'ciaranm/securemodelines'
 
-Bundle 'mhinz/vim-signify'
+Plugin 'mhinz/vim-signify'
 let g:signify_vcs_list = [ 'fossil', 'git', 'hg' ]
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " ignore files: see [wildmode] above
 let g:ctrlp_root_markers = ['.fslckout']
 
-Bundle 'TaskList.vim'
+Plugin 'TaskList.vim'
 map <leader>tl <Plug>TaskList
 
-Bundle 'sjl/gundo.vim'
+Plugin 'sjl/gundo.vim'
 map <leader>g :GundoToggle<CR>
 
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
 " }}}
 
 " ------------------------------------------------------------------------ {{{
@@ -345,8 +346,8 @@ nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 " ------------------------------------------------------------------------ {{{
 " UltiSnips settings
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "MyUltiSnips"]
 " }}}
 
