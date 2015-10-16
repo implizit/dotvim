@@ -37,6 +37,13 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 " }}}
 
+
+" ------------------------------------------------------------------------ {{{
+" Early setup
+" change the mapleader from \ to ,
+let mapleader=","
+" }}}
+
 " ------------------------------------------------------------------------ {{{
 " Buffer handling
 set hidden             " Allow changed buffers to be hidden
@@ -68,6 +75,7 @@ set number             " Turn on line numbers
 set relativenumber     " Turn on relative numbering
 set numberwidth=3      " Enough for relative numbering
 set ruler              " Show line number, cursor position.
+set cursorline         " Draw line the cursor is on.
 set showcmd            " Display incomplete commands.
 set showmode           " Show editing mode
 set visualbell t_vb=   " Error bells are displayed visually.
@@ -89,6 +97,7 @@ set matchpairs=(:),[:],{:},<:> " Character pairs for use with %, 'showmatch'
 set matchtime=1        " In tenths of seconds, when showmatch is on
 
 set ttyfast            " Optimize for local edits
+set lazyredraw         " Don't redraw in the middle of macro execution.
 " }}}
 
 " ------------------------------------------------------------------------ {{{
@@ -132,8 +141,10 @@ set colorcolumn=80     " Warn me at specific column.
 " ------------------------------------------------------------------------ {{{
 " Search / Replace
 set incsearch          " Search as you type.
+set hlsearch           " Highlight matches
 set ignorecase         " Ignore case when searching
 set smartcase          " Use case if patterns contains upper case letter
+nnoremap <leader><space> :nohlsearch<CR>
 
 set gdefault           " Global substitution by default
 " }}}
@@ -143,6 +154,15 @@ set gdefault           " Global substitution by default
 
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+" }}}
+
+" ------------------------------------------------------------------------ {{{
+" Folding
+
+set foldenable
+set foldlevelstart=99   " open all folds by default
+set foldnestmax=10      " 10 nested fold max
+set foldmethod=marker   " fold based on marker
 " }}}
 
 " ------------------------------------------------------------------------ {{{
@@ -168,6 +188,7 @@ function s:PythonMode()
   set textwidth=79
   set expandtab
   set autoindent
+  set foldmethod=indent   " fold based on indent level
 endfunction
 autocmd FileType python call s:PythonMode()
 
@@ -272,9 +293,6 @@ au FileType make set noexpandtab
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
-
-" change the mapleader from \ to ,
-let mapleader=","
 " }}}
 
 " ------------------------------------------------------------------------ {{{
@@ -303,6 +321,9 @@ let g:signify_vcs_list = [ 'fossil', 'git', 'hg' ]
 Plugin 'kien/ctrlp.vim'
 " ignore files: see [wildmode] above
 let g:ctrlp_root_markers = ['.fslckout']
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+" let g:ctrlp_working_path_mode = 0
 
 Plugin 'TaskList.vim'
 map <leader>tl <Plug>TaskList
@@ -342,6 +363,9 @@ nnoremap <leader>zN :set norelativenumber!<CR>:set foldcolumn=0<CR>
 
 " Toggle centering current line
 nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+" highlight last inserted text
+nnoremap gV `[v`]
 " }}}
 
 " ------------------------------------------------------------------------ {{{
