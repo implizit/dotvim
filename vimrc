@@ -361,6 +361,9 @@ nnoremap <C-l> <C-w>l
 nnoremap <leader>zn :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <leader>zN :set norelativenumber!<CR>:set foldcolumn=0<CR>
 
+" Temporary disallow autoindent
+set pastetoggle=<F3>
+
 " Toggle centering current line
 nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
 
