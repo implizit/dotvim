@@ -314,6 +314,7 @@ let g:syntastic_tex_lacheck_quiet_messages = {
   \ "regex" : ["Could not open \""] }
 let g:syntastic_tex_chktex_quiet_messages = {
   \ "regex" : ["Could not execute LaTeX command",
+  \            "You should put a space in front of parenthesis",
   \            "Use either `` or '' as an alternative to `\"'"] }
 " }}}
   " \ "regex" : "(Could not open \")|(Could not execute LaTeX command\.)" }
