@@ -294,6 +294,7 @@ au FileType make set noexpandtab
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'implizit/dockerfile.vim'
 " }}}
 
@@ -344,6 +345,9 @@ map <leader>g :GundoToggle<CR>
 
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+
+Plugin 'scrooloose/nerdtree'
+nnoremap <leader>nt :NERDTree<CR>
 " }}}
 
 " ------------------------------------------------------------------------ {{{
