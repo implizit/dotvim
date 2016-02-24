@@ -355,6 +355,7 @@ nmap <silent> <leader>k :NERDTreeToggle<cr>
 nmap <silent> <leader>y :NERDTreeFind<cr>
 
 Plugin 'tpope/vim-fugitive'
+Plugin 'benmills/vimux'
 " }}}
 
 " ------------------------------------------------------------------------ {{{
