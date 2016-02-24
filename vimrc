@@ -332,7 +332,7 @@ let g:signify_vcs_list = [ 'fossil', 'git', 'hg' ]
 
 Plugin 'kien/ctrlp.vim'
 " ignore files: see [wildmode] above
-let g:ctrlp_root_markers = ['.fslckout']
+let g:ctrlp_root_markers = ['.fslckout', '.git', '.hg']
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 " let g:ctrlp_working_path_mode = 0
@@ -347,7 +347,14 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 Plugin 'scrooloose/nerdtree'
-nnoremap <leader>nt :NERDTree<CR>
+" show hidden files in NERDTree
+let NERDTreeShowHidden=1
+" Toggle NERDTree
+nmap <silent> <leader>k :NERDTreeToggle<cr>
+" expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeFind<cr>
+
+Plugin 'tpope/vim-fugitive'
 " }}}
 
 " ------------------------------------------------------------------------ {{{
