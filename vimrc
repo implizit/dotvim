@@ -56,7 +56,7 @@ syntax on
 " ------------------------------------------------------------------------ {{{
 " Screen layout
 
-set shortmess+=I " Don't show the Vim welcome screen.
+set shortmess+=I " Don't show the Vim welcome screen
 
 " Status line
 set laststatus=2
@@ -74,30 +74,34 @@ set statusline+=%<%P           " file position
 set number             " Turn on line numbers
 set relativenumber     " Turn on relative numbering
 set numberwidth=3      " Enough for relative numbering
-set ruler              " Show line number, cursor position.
-set cursorline         " Draw line the cursor is on.
-set showcmd            " Display incomplete commands.
+set ruler              " Show line number, cursor position
+set cursorline         " Draw line the cursor is on
+set showcmd            " Display incomplete commands
 set showmode           " Show editing mode
-set visualbell t_vb=   " Error bells are displayed visually.
+set visualbell t_vb=   " Error bells are displayed visually
 
-set scrolloff=3        " Context lines at top and bottom of display.
-set sidescrolloff=5    " Context columns at left and right.
-set sidescroll=1       " Number of chars to scroll when scrolling sideways.
+set scrolloff=3        " Context lines at top and bottom of display
+set sidescrolloff=5    " Context columns at left and right
+set sidescroll=1       " Number of chars to scroll when scrolling sideways
 
-"set list listchars=tab:\ \ ,trail:·
+" set list listchars=tab:\ \ ,trail:·
+" Use the same symbols as textmate for tabstops and EOLs
+set list listchars=nbsp:·,tab:▸\ ,eol:¬,trail:·,extends:>,precedes:<
+" Shortcut for toggling display of invisibles
+nmap <leader>l :set list!<CR>
 
-set splitright         " Split new vertical windows right of current window.
-set splitbelow         " Split new horizontal windows under current window.
+set splitright         " Split new vertical windows right of current window
+set splitbelow         " Split new horizontal windows under current window
 
-set winminheight=0     " Allow windows to shrink to status line.
-set winminwidth=0      " Allow windows to shrink to vertical separator.
+set winminheight=0     " Allow windows to shrink to status line
+set winminwidth=0      " Allow windows to shrink to vertical separator
 
 set noshowmatch        " Don't jump to matching characters
 set matchpairs=(:),[:],{:},<:> " Character pairs for use with %, 'showmatch'
 set matchtime=1        " In tenths of seconds, when showmatch is on
 
 set ttyfast            " Optimize for local edits
-set lazyredraw         " Don't redraw in the middle of macro execution.
+set lazyredraw         " Don't redraw in the middle of macro execution
 " }}}
 
 " ------------------------------------------------------------------------ {{{
@@ -110,12 +114,12 @@ set nosmartindent      " 'smartindent' breaks right-shifting of # lines
 
 " Tabs converted to 2 spaces
 " (Nice screencast at http://vimcasts.org/episodes/tabs-and-spaces/)
-set expandtab          " Insert spaces for <Tab> press; use spaces to indent.
-set smarttab           " Tab respects 'shiftwidth', 'tabstop', 'softtabstop'.
-set tabstop=2          " Set the visible width of tabs.
-set softtabstop=2      " Edit as if tabs are 4 characters wide.
-set shiftwidth=2       " Number of spaces to use for indent and unindent.
-set shiftround         " Round indent to a multiple of 'shiftwidth'.
+set expandtab          " Insert spaces for <Tab> press; use spaces to indent
+set smarttab           " Tab respects 'shiftwidth', 'tabstop', 'softtabstop'
+set tabstop=2          " Set the visible width of tabs
+set softtabstop=2      " Edit as if tabs are 4 characters wide
+set shiftwidth=2       " Number of spaces to use for indent and unindent
+set shiftround         " Round indent to a multiple of 'shiftwidth'
 " }}}
 
 " ------------------------------------------------------------------------ {{{
@@ -130,17 +134,17 @@ set suffixes=~,.aux,.bak,.bkp,.dvi,.hi,.o,.gz,.idx,.log,.ps,.swp,.tar,.ilg,.bbl,
 
 " ------------------------------------------------------------------------ {{{
 " Line wrapping
-set nowrap             " Don't wrap the display of long lines.
-set linebreak          " Wrap at 'breakat' char vs display edge if 'wrap' on.
-set display=lastline   " Display as much of a window's last line as possible.
-set textwidth=0        " Don't auto-wrap lines except for specific filetypes.
+set nowrap             " Don't wrap the display of long lines
+set linebreak          " Wrap at 'breakat' char vs display edge if 'wrap' on
+set display=lastline   " Display as much of a window's last line as possible
+set textwidth=0        " Don't auto-wrap lines except for specific filetypes
 set formatoptions=qrn1 " See :he fo-table for more information
-set colorcolumn=80     " Warn me at specific column.
+set colorcolumn=80     " Warn me at specific column
 " }}}
 
 " ------------------------------------------------------------------------ {{{
 " Search / Replace
-set incsearch          " Search as you type.
+set incsearch          " Search as you type
 set hlsearch           " Highlight matches
 set ignorecase         " Ignore case when searching
 set smartcase          " Use case if patterns contains upper case letter
@@ -173,6 +177,11 @@ set fileformat=unix
 au BufNewFile * set fileformat=unix
 
 set encoding=utf-8  " Use UTF-8
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
 " }}}
 
 " ------------------------------------------------------------------------ {{{
