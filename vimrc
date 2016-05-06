@@ -304,7 +304,7 @@ au FileType make set noexpandtab
 au BufNewFile,BufRead *.json set ft=javascript
 
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'implizit/dockerfile.vim'
+Plugin 't73fde/dockerfile.vim'
 " }}}
 
 " ------------------------------------------------------------------------ {{{
