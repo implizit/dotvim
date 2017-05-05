@@ -284,7 +284,7 @@ function s:MailMode()
   setlocal noautoindent
   setlocal spell
   setlocal spelllang=de,en
-  setlocal formatprg=par\ -w79q
+  setlocal formatprg=par\ -w78q
 endfunction
 
 autocmd FileType mail call s:MailMode()
