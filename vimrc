@@ -205,7 +205,7 @@ autocmd FileType python call s:PythonMode()
 autocmd BufRead,BufNewFile *.tac set filetype=python
 
 " Add the virtualenv's site-packages to vim path
-py << EOF
+py3 << EOF
 import os.path
 import sys
 import vim
