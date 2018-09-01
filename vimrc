@@ -365,6 +365,8 @@ nmap <silent> <leader>y :NERDTreeFind<cr>
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'benmills/vimux'
+Plugin 'junegunn/goyo.vim'
+Plugin 'gnupg.vim'
 " }}}
 
 " ------------------------------------------------------------------------ {{{
