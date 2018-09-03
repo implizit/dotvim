@@ -1,4 +1,4 @@
-" .vimrc - Detlef Kreuz
+" .vimrc - Detlef Stern
 
 " This must be first, because it changes other options as side effect
 set nocompatible    " This is Vim, not Vi
@@ -102,6 +102,19 @@ set matchtime=1        " In tenths of seconds, when showmatch is on
 
 set ttyfast            " Optimize for local edits
 set lazyredraw         " Don't redraw in the middle of macro execution
+" }}}
+
+" ------------------------------------------------------------------------ {{{
+" Undo
+
+if !isdirectory($HOME."/.cache")
+    call mkdir($HOME."/.cache", "", 0770)
+endif
+if !isdirectory($HOME."/.cache/vim-undo")
+      call mkdir($HOME."/.cache/vim-undo", "", 0700)
+endif
+set undodir=~/.cache/vim-undo
+set undofile
 " }}}
 
 " ------------------------------------------------------------------------ {{{
