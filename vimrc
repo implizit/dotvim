@@ -380,6 +380,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'benmills/vimux'
 Plugin 'junegunn/goyo.vim'
 Plugin 'gnupg.vim'
+
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
 " }}}
 
 " ------------------------------------------------------------------------ {{{
