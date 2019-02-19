@@ -34,7 +34,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Vundle must manage itself
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 " }}}
 
 
