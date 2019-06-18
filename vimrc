@@ -234,6 +234,11 @@ EOF
 " }}}
 
 " ------------------------------------------------------------------------ {{{
+" Go
+Plugin 'fatih/vim-go'
+" }}}
+
+" ------------------------------------------------------------------------ {{{
 " LaTeX
 let g:tex_flavor='latex'
 let g:Tex_SmartKeyQuote=0  " Disable Quote, because of german LaTeX
